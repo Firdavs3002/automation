@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-// eslint-disable-next-line import/extensions
 import NumbersValidator from '../../source_code/NumbersValidator.js';
 
 describe('NumbersValidator', () => {
@@ -8,40 +7,63 @@ describe('NumbersValidator', () => {
     validator = new NumbersValidator();
   });
 
-  it('should determine if a number is even', () => {
-    expect(validator.isNumberEven(2)).to.be.true;
-    expect(validator.isNumberEven(1)).to.be.false;
+  describe('isNumberEven', () => {
+    it('should return true for even numbers', () => {
+      expect(validator.isNumberEven(2)).to.be.true;
+    });
+
+    it('should return false for odd numbers', () => {
+      expect(validator.isNumberEven(1)).to.be.false;
+    });
+
+    it('should throw an error for non-numeric inputs', () => {
+      expect(() => validator.isNumberEven('string')).to.throw('[string] is not of type "Number" it is of type "string"');
+    });
   });
 
-  it('should retrieve even numbers from an array', () => {
-    expect(validator.getEvenNumbersFromArray([1, 2, 3, 4])).to.deep.equal([2, 4]);
+  describe('getEvenNumbersFromArray', () => {
+    it('should retrieve even numbers from an array', () => {
+      expect(validator.getEvenNumbersFromArray([1, 2, 3, 4])).to.deep.equal([2, 4]);
+    });
+
+    it('should return an empty array if there are no even numbers', () => {
+      expect(validator.getEvenNumbersFromArray([1, 3, 5])).to.deep.equal([]);
+    });
+
+    it('should throw an error if the array contains non-numeric values', () => {
+      expect(() => validator.getEvenNumbersFromArray([1, 2, 'three'])).to.throw('[1,2,three] is not an array of "Numbers"');
+    });
   });
 
-  it('should determine if all elements of an array are numbers', () => {
-    expect(validator.isAllNumbers([1, 2, 3])).to.be.true;
-    expect(validator.isAllNumbers([1, 2, 'three'])).to.be.false;
+  describe('isAllNumbers', () => {
+    it('should return true if all elements of an array are numbers', () => {
+      expect(validator.isAllNumbers([1, 2, 3])).to.be.true;
+    });
+
+    it('should return false if any element in the array is not a number', () => {
+      expect(validator.isAllNumbers([1, 2, 'three'])).to.be.false;
+    });
+
+    it('should return false for an empty array', () => {
+      expect(validator.isAllNumbers([])).to.be.false;
+    });
+
+    it('should throw an error for non-array inputs', () => {
+      expect(() => validator.isAllNumbers('string')).to.throw('[string] is not an array');
+    });
   });
 
-  it('should determine if a value is an integer', () => {
-    expect(validator.isInteger(4)).to.be.true;
-    expect(validator.isInteger(4.5)).to.be.false;
-  });
+  describe('isInteger', () => {
+    it('should return true for integer values', () => {
+      expect(validator.isInteger(4)).to.be.true;
+    });
 
-  // Tests to cover the uncovered lines
+    it('should return false for non-integer values', () => {
+      expect(validator.isInteger(4.5)).to.be.false;
+    });
 
-  it('should throw an error if input to isNumberEven is not a number', () => {
-    expect(() => validator.isNumberEven('string')).to.throw('[string] is not of type "Number" it is of type "string"');
-  });
-
-  it('should throw an error if input to getEvenNumbersFromArray is not an array of numbers', () => {
-    expect(() => validator.getEvenNumbersFromArray([1, 2, 'three'])).to.throw('[1,2,three] is not an array of "Numbers"');
-  });
-
-  it('should throw an error if input to isAllNumbers is not an array', () => {
-    expect(() => validator.isAllNumbers('string')).to.throw('[string] is not an array');
-  });
-
-  it('should throw an error if input to isInteger is not a number', () => {
-    expect(() => validator.isInteger('string')).to.throw('[string] is not a number');
+    it('should throw an error for non-numeric inputs', () => {
+      expect(() => validator.isInteger('string')).to.throw('[string] is not a number');
+    });
   });
 });
