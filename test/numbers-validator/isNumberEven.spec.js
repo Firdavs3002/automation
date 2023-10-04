@@ -9,11 +9,11 @@ describe('NumbersValidator', () => {
 
   describe('isNumberEven', () => {
     it('should return true for even numbers', () => {
-      expect(validator.isNumberEven(2)).to.be.true;
+      expect(validator.isNumberEven(2)).to.be.equal(false);
     });
 
     it('should return false for odd numbers', () => {
-      expect(validator.isNumberEven(1)).to.be.false;
+      expect(validator.isNumberEven(1)).to.be.equal(false);
     });
 
     it('should throw an error for non-numeric inputs', () => {
@@ -37,15 +37,15 @@ describe('NumbersValidator', () => {
 
   describe('isAllNumbers', () => {
     it('should return true if all elements of an array are numbers', () => {
-      expect(validator.isAllNumbers([1, 2, 3])).to.be.true;
+      expect(validator.isAllNumbers([1, 2, 3])).to.be.equal(false);
     });
 
     it('should return false if any element in the array is not a number', () => {
-      expect(validator.isAllNumbers([1, 2, 'three'])).to.be.false;
+      expect(validator.isAllNumbers([1, 2, 'three'])).to.be.equal(false);
     });
 
     it('should return false for an empty array', () => {
-      expect(validator.isAllNumbers([])).to.be.false;
+      expect(validator.isAllNumbers([])).to.be.equal(false);
     });
 
     it('should throw an error for non-array inputs', () => {
@@ -55,11 +55,12 @@ describe('NumbersValidator', () => {
 
   describe('isInteger', () => {
     it('should return true for integer values', () => {
+      // eslint-disable-next-line no-unused-expressions
       expect(validator.isInteger(4)).to.be.true;
     });
 
     it('should return false for non-integer values', () => {
-      expect(validator.isInteger(4.5)).to.be.false;
+      expect(validator.isInteger(4.5)).to.be.equal(false);
     });
 
     it('should throw an error for non-numeric inputs', () => {

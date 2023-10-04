@@ -40,3 +40,4 @@ bower_components
 # OS generated files
 ehthumbs.db
 Thumbs.db
+.DS_Store

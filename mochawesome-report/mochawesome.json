@@ -2,14 +2,14 @@
   "stats": {
     "suites": 5,
     "tests": 13,
-    "passes": 12,
+    "passes": 10,
     "pending": 0,
-    "failures": 1,
-    "start": "2023-10-03T17:15:39.059Z",
-    "end": "2023-10-03T17:15:39.074Z",
-    "duration": 15,
+    "failures": 3,
+    "start": "2023-10-04T06:20:17.684Z",
+    "end": "2023-10-04T06:20:17.696Z",
+    "duration": 12,
     "testsRegistered": 13,
-    "passPercent": 92.3076923076923,
+    "passPercent": 76.92307692307693,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,19 +18,19 @@
   },
   "results": [
     {
-      "uuid": "c4243de4-f049-4af1-9196-93ddde838bf7",
+      "uuid": "19ea1204-42c4-4d15-bc6c-e5426483a723",
       "title": "",
-      "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-      "file": "/test/numbers-validator/NumberValidator.spec.js",
+      "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+      "file": "/test/numbers-validator/isNumberEven.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "cca6cfd1-268d-45b1-ac73-731eeedf26c1",
+          "uuid": "6f897cf5-7395-414f-b3c7-01bae20e0340",
           "title": "NumbersValidator",
-          "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-          "file": "/test/numbers-validator/NumberValidator.spec.js",
+          "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+          "file": "/test/numbers-validator/isNumberEven.spec.js",
           "beforeHooks": [
             {
               "title": "\"before each\" hook in \"NumbersValidator\"",
@@ -45,8 +45,8 @@
               "context": null,
               "code": "validator = new NumbersValidator();",
               "err": {},
-              "uuid": "6eb72663-b978-4edb-b10e-84422491a4a9",
-              "parentUUID": "cca6cfd1-268d-45b1-ac73-731eeedf26c1",
+              "uuid": "90d164a0-f7cb-4252-a27e-604b4de49212",
+              "parentUUID": "6f897cf5-7395-414f-b3c7-01bae20e0340",
               "isHook": true,
               "skipped": false
             }
@@ -55,10 +55,10 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "a98490ae-6976-4e30-a46d-809798134042",
+              "uuid": "60a89efc-56b0-4d15-b3ed-65f06ff4eb5a",
               "title": "isNumberEven",
-              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-              "file": "/test/numbers-validator/NumberValidator.spec.js",
+              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+              "file": "/test/numbers-validator/isNumberEven.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
               "tests": [
@@ -66,17 +66,21 @@
                   "title": "should return true for even numbers",
                   "fullTitle": "NumbersValidator isNumberEven should return true for even numbers",
                   "timedOut": false,
-                  "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 1,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isNumberEven(2)).to.be.true;",
-                  "err": {},
-                  "uuid": "478ddf41-4702-4da3-84d1-eaeb3654a9e5",
-                  "parentUUID": "a98490ae-6976-4e30-a46d-809798134042",
+                  "code": "expect(validator.isNumberEven(2)).to.be.equal(false);",
+                  "err": {
+                    "message": "AssertionError: expected true to equal false",
+                    "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (file:///Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js:12:47)\n    at process.processImmediate (node:internal/timers:476:21)",
+                    "diff": "- true\n+ false\n"
+                  },
+                  "uuid": "e1201e3a-e67c-471d-8f05-7449025b2ccf",
+                  "parentUUID": "60a89efc-56b0-4d15-b3ed-65f06ff4eb5a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -91,10 +95,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isNumberEven(1)).to.be.false;",
+                  "code": "expect(validator.isNumberEven(1)).to.be.equal(false);",
                   "err": {},
-                  "uuid": "caa5dff4-3616-43e6-9ec9-fcb1d63604d5",
-                  "parentUUID": "a98490ae-6976-4e30-a46d-809798134042",
+                  "uuid": "197c16dc-bf89-4fff-b75a-726ce60a1f79",
+                  "parentUUID": "60a89efc-56b0-4d15-b3ed-65f06ff4eb5a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -102,7 +106,7 @@
                   "title": "should throw an error for non-numeric inputs",
                   "fullTitle": "NumbersValidator isNumberEven should throw an error for non-numeric inputs",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -111,19 +115,20 @@
                   "context": null,
                   "code": "expect(() => validator.isNumberEven('string')).to.throw('[string] is not of type \"Number\" it is of type \"string\"');",
                   "err": {},
-                  "uuid": "7f62a4ed-aaa7-4b78-a55d-e5663001ab1e",
-                  "parentUUID": "a98490ae-6976-4e30-a46d-809798134042",
+                  "uuid": "55b6e5c6-8c9b-48d0-86fa-38177a232fdc",
+                  "parentUUID": "60a89efc-56b0-4d15-b3ed-65f06ff4eb5a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "478ddf41-4702-4da3-84d1-eaeb3654a9e5",
-                "caa5dff4-3616-43e6-9ec9-fcb1d63604d5",
-                "7f62a4ed-aaa7-4b78-a55d-e5663001ab1e"
+                "197c16dc-bf89-4fff-b75a-726ce60a1f79",
+                "55b6e5c6-8c9b-48d0-86fa-38177a232fdc"
               ],
-              "failures": [],
+              "failures": [
+                "e1201e3a-e67c-471d-8f05-7449025b2ccf"
+              ],
               "pending": [],
               "skipped": [],
               "duration": 1,
@@ -132,10 +137,10 @@
               "_timeout": 2000
             },
             {
-              "uuid": "89faa089-2420-429c-9b45-0b3cfa5d041c",
+              "uuid": "3b045212-d048-4368-a146-ad9d9acf7916",
               "title": "getEvenNumbersFromArray",
-              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-              "file": "/test/numbers-validator/NumberValidator.spec.js",
+              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+              "file": "/test/numbers-validator/isNumberEven.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
               "tests": [
@@ -152,8 +157,8 @@
                   "context": null,
                   "code": "expect(validator.getEvenNumbersFromArray([1, 2, 3, 4])).to.deep.equal([2, 4]);",
                   "err": {},
-                  "uuid": "a4da8c4d-1407-4909-bdf9-1822bcbc5051",
-                  "parentUUID": "89faa089-2420-429c-9b45-0b3cfa5d041c",
+                  "uuid": "58ae9786-657d-439e-ae5e-7827058cc81e",
+                  "parentUUID": "3b045212-d048-4368-a146-ad9d9acf7916",
                   "isHook": false,
                   "skipped": false
                 },
@@ -170,8 +175,8 @@
                   "context": null,
                   "code": "expect(validator.getEvenNumbersFromArray([1, 3, 5])).to.deep.equal([]);",
                   "err": {},
-                  "uuid": "86890d6f-deca-4edd-b2a7-4795395f1595",
-                  "parentUUID": "89faa089-2420-429c-9b45-0b3cfa5d041c",
+                  "uuid": "b9fe26fd-1bf1-4526-b95d-6290e679aa56",
+                  "parentUUID": "3b045212-d048-4368-a146-ad9d9acf7916",
                   "isHook": false,
                   "skipped": false
                 },
@@ -188,17 +193,17 @@
                   "context": null,
                   "code": "expect(() => validator.getEvenNumbersFromArray([1, 2, 'three'])).to.throw('[1,2,three] is not an array of \"Numbers\"');",
                   "err": {},
-                  "uuid": "f9c88b86-df22-4862-9d94-98df69c9d03a",
-                  "parentUUID": "89faa089-2420-429c-9b45-0b3cfa5d041c",
+                  "uuid": "1515b105-2117-4b19-b213-56205da791a2",
+                  "parentUUID": "3b045212-d048-4368-a146-ad9d9acf7916",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "a4da8c4d-1407-4909-bdf9-1822bcbc5051",
-                "86890d6f-deca-4edd-b2a7-4795395f1595",
-                "f9c88b86-df22-4862-9d94-98df69c9d03a"
+                "58ae9786-657d-439e-ae5e-7827058cc81e",
+                "b9fe26fd-1bf1-4526-b95d-6290e679aa56",
+                "1515b105-2117-4b19-b213-56205da791a2"
               ],
               "failures": [],
               "pending": [],
@@ -209,10 +214,10 @@
               "_timeout": 2000
             },
             {
-              "uuid": "41272250-52af-45d3-b08e-bfec4f5d9b0b",
+              "uuid": "090c7b8d-eee2-4032-b1f2-31b8c943ae98",
               "title": "isAllNumbers",
-              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-              "file": "/test/numbers-validator/NumberValidator.spec.js",
+              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+              "file": "/test/numbers-validator/isNumberEven.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
               "tests": [
@@ -221,16 +226,20 @@
                   "fullTitle": "NumbersValidator isAllNumbers should return true if all elements of an array are numbers",
                   "timedOut": false,
                   "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isAllNumbers([1, 2, 3])).to.be.true;",
-                  "err": {},
-                  "uuid": "9b186909-f879-45a8-81d2-a480c91e270c",
-                  "parentUUID": "41272250-52af-45d3-b08e-bfec4f5d9b0b",
+                  "code": "expect(validator.isAllNumbers([1, 2, 3])).to.be.equal(false);",
+                  "err": {
+                    "message": "AssertionError: expected true to equal false",
+                    "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (file:///Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js:40:55)\n    at process.processImmediate (node:internal/timers:476:21)",
+                    "diff": "- true\n+ false\n"
+                  },
+                  "uuid": "0d99de4e-8b24-4f19-b709-35866dbc0a17",
+                  "parentUUID": "090c7b8d-eee2-4032-b1f2-31b8c943ae98",
                   "isHook": false,
                   "skipped": false
                 },
@@ -245,10 +254,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isAllNumbers([1, 2, 'three'])).to.be.false;",
+                  "code": "expect(validator.isAllNumbers([1, 2, 'three'])).to.be.equal(false);",
                   "err": {},
-                  "uuid": "61701a46-ee1c-4573-8808-c2d8315cfeb9",
-                  "parentUUID": "41272250-52af-45d3-b08e-bfec4f5d9b0b",
+                  "uuid": "1fea9a15-dfe2-4d03-b4db-d60464ec5109",
+                  "parentUUID": "090c7b8d-eee2-4032-b1f2-31b8c943ae98",
                   "isHook": false,
                   "skipped": false
                 },
@@ -256,21 +265,21 @@
                   "title": "should return false for an empty array",
                   "fullTitle": "NumbersValidator isAllNumbers should return false for an empty array",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isAllNumbers([])).to.be.false;",
+                  "code": "expect(validator.isAllNumbers([])).to.be.equal(false);",
                   "err": {
-                    "message": "AssertionError: expected true to be false",
-                    "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (file:///Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js:48:47)\n    at process.processImmediate (node:internal/timers:476:21)",
+                    "message": "AssertionError: expected true to equal false",
+                    "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (file:///Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js:48:48)\n    at process.processImmediate (node:internal/timers:476:21)",
                     "diff": "- true\n+ false\n"
                   },
-                  "uuid": "ffe543ad-ce56-40eb-a98f-78fa151275a3",
-                  "parentUUID": "41272250-52af-45d3-b08e-bfec4f5d9b0b",
+                  "uuid": "b74dd412-e652-4438-9afe-bcb06be21e7f",
+                  "parentUUID": "090c7b8d-eee2-4032-b1f2-31b8c943ae98",
                   "isHook": false,
                   "skipped": false
                 },
@@ -278,7 +287,7 @@
                   "title": "should throw an error for non-array inputs",
                   "fullTitle": "NumbersValidator isAllNumbers should throw an error for non-array inputs",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -287,33 +296,33 @@
                   "context": null,
                   "code": "expect(() => validator.isAllNumbers('string')).to.throw('[string] is not an array');",
                   "err": {},
-                  "uuid": "930bb863-155a-4ea6-bfaa-a211b70729c1",
-                  "parentUUID": "41272250-52af-45d3-b08e-bfec4f5d9b0b",
+                  "uuid": "70b254a2-a13b-44f1-89e8-ea9f6e5bbd23",
+                  "parentUUID": "090c7b8d-eee2-4032-b1f2-31b8c943ae98",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9b186909-f879-45a8-81d2-a480c91e270c",
-                "61701a46-ee1c-4573-8808-c2d8315cfeb9",
-                "930bb863-155a-4ea6-bfaa-a211b70729c1"
+                "1fea9a15-dfe2-4d03-b4db-d60464ec5109",
+                "70b254a2-a13b-44f1-89e8-ea9f6e5bbd23"
               ],
               "failures": [
-                "ffe543ad-ce56-40eb-a98f-78fa151275a3"
+                "0d99de4e-8b24-4f19-b709-35866dbc0a17",
+                "b74dd412-e652-4438-9afe-bcb06be21e7f"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "15c11be0-32bc-413a-abef-8aefa865b9dc",
+              "uuid": "539116d5-4646-4c40-9795-05ff377babf9",
               "title": "isInteger",
-              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/NumberValidator.spec.js",
-              "file": "/test/numbers-validator/NumberValidator.spec.js",
+              "fullFile": "/Users/firdavskhujaibrokhimov/Desktop/Unit_testing_task/test/numbers-validator/isNumberEven.spec.js",
+              "file": "/test/numbers-validator/isNumberEven.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
               "tests": [
@@ -328,10 +337,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isInteger(4)).to.be.true;",
+                  "code": "// eslint-disable-next-line no-unused-expressions\nexpect(validator.isInteger(4)).to.be.true;",
                   "err": {},
-                  "uuid": "64ded7ed-e5f8-42ea-b95a-88432c9d465b",
-                  "parentUUID": "15c11be0-32bc-413a-abef-8aefa865b9dc",
+                  "uuid": "ab47d659-d098-48b5-b0ef-118d777b2d01",
+                  "parentUUID": "539116d5-4646-4c40-9795-05ff377babf9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -346,10 +355,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "expect(validator.isInteger(4.5)).to.be.false;",
+                  "code": "expect(validator.isInteger(4.5)).to.be.equal(false);",
                   "err": {},
-                  "uuid": "f36e6b20-1f7a-413f-bb5f-3d55b0088238",
-                  "parentUUID": "15c11be0-32bc-413a-abef-8aefa865b9dc",
+                  "uuid": "68e4d656-5f70-4f80-ac10-8846bddfd450",
+                  "parentUUID": "539116d5-4646-4c40-9795-05ff377babf9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -366,17 +375,17 @@
                   "context": null,
                   "code": "expect(() => validator.isInteger('string')).to.throw('[string] is not a number');",
                   "err": {},
-                  "uuid": "8522bcdf-b520-4132-b0f5-530d61fbb9cc",
-                  "parentUUID": "15c11be0-32bc-413a-abef-8aefa865b9dc",
+                  "uuid": "2fb40419-46b2-49a9-a7df-258fbe13e7d9",
+                  "parentUUID": "539116d5-4646-4c40-9795-05ff377babf9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "64ded7ed-e5f8-42ea-b95a-88432c9d465b",
-                "f36e6b20-1f7a-413f-bb5f-3d55b0088238",
-                "8522bcdf-b520-4132-b0f5-530d61fbb9cc"
+                "ab47d659-d098-48b5-b0ef-118d777b2d01",
+                "68e4d656-5f70-4f80-ac10-8846bddfd450",
+                "2fb40419-46b2-49a9-a7df-258fbe13e7d9"
               ],
               "failures": [],
               "pending": [],

@@ -10,7 +10,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "view-report": "open mochawesome-report/mochawesome.html"
-    
   },
   "author": "Firdavskhuja_Ibrokhimov",
   "license": "ISC",
