@@ -9,7 +9,7 @@ describe('NumbersValidator', () => {
 
   describe('isNumberEven', () => {
     it('should return true for even numbers', () => {
-      expect(validator.isNumberEven(2)).to.be.equal(false);
+      expect(validator.isNumberEven(2)).to.be.equal(true);
     });
 
     it('should return false for odd numbers', () => {
@@ -37,7 +37,7 @@ describe('NumbersValidator', () => {
 
   describe('isAllNumbers', () => {
     it('should return true if all elements of an array are numbers', () => {
-      expect(validator.isAllNumbers([1, 2, 3])).to.be.equal(false);
+      expect(validator.isAllNumbers([1, 2, 3])).to.be.equal(true);
     });
 
     it('should return false if any element in the array is not a number', () => {
