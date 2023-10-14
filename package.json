@@ -1,0 +1,22 @@
+{
+  "name": "new-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "lint": "eslint ./ --fix" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/local-runner": "^8.18.2",
+    "eslint-config-google": "^0.14.0", 
+    "@wdio/mocha-framework": "^8.18.2",
+    "@wdio/spec-reporter": "^8.18.1",
+    "chromedriver": "^118.0.0",
+    "eslint": "^8.51.0"
+  }
+}
