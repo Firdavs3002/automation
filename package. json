@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "automation",
   "main": "index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "lint": "eslint ./ --fix" 
   },
   "author": "Firdavskhuja_Ibrokhomov",
   "email": "fr.ibrokhimov@gmail.com",
   "license": "ISC"
+  "licens": "IS"
 }
