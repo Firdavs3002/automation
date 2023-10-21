@@ -1,0 +1,26 @@
+{
+  "name": "last",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "lint": "eslint ./ --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^8.20.2",
+    "webdriverio": "^8.20.0"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^8.20.0",
+    "@wdio/mocha-framework": "^8.20.0",
+    "@wdio/spec-reporter": "^8.20.0",
+    "chromedriver": "^118.0.0",
+    "eslint": "^8.52.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
